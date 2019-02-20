@@ -1,0 +1,32 @@
+<% include ../partials/header %>
+
+
+  <div class="container">
+    <header class="jumbotron">
+      <h1>Welcome To YayCamp!</h1>
+      <p>View out hand-picked campgrounds from all over the world</p>
+      <p>
+        <a class="btn btn-primary"href="/campgrounds/new">Add New Campground</a>
+      </p>
+      
+    </header>
+  
+    <div class="row text-center" style="display:flex; flex-wrap: wrap;">
+      <% campsites.forEach(campsite => { %>
+        <div class="col-md-3 col-sm-6">
+          <div class="thumbnail">
+              <img src="<%= campsite.image %>"/>
+              <div class="caption">
+                  <h4><%= campsite.name %></h4>
+                  <p><a href="/campgrounds/<%= campsite._id %>" class="btn btn-primary">Go</a></p>
+              </div>
+          </div>
+          
+        </div>
+      <% }); %>
+    </div>
+    
+    
+  </div>
+  
+ <% include ../partials/footer %>
