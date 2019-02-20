@@ -20,6 +20,7 @@ router.get("/", (req, res) => {
   // CREATE - add new campground to DB
   router.post("/", middleware.isLoggedIn, (req, res) => {
     const name = req.body.name,
+          price = req.body.price,
           image = req.body.image,
           description = req.body.description,
           author = {             //req.user에 있는 id와 username을 author라는 변수에 저장
@@ -29,6 +30,7 @@ router.get("/", (req, res) => {
   
     const newCampground = { 
       name, 
+      price,
       image,
       description,
       author     // 여기에 포함 시킴으로서 템플릿에서 사용할 수 있게되고 데이터베이스에도 그대로 저장이 되게끔 할 수 있음

@@ -16,7 +16,7 @@ const commentRoutes = require("./routes/comments"),
       campgroundRoutes = require("./routes/campgrounds"),
       indexRoutes = require("./routes/index");
     
-mongoose.connect("mongodb://localhost/yay_camp_v11", {useNewUrlParser: true});
+mongoose.connect("mongodb://localhost/yay_camp_v12", {useNewUrlParser: true});
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
